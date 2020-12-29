@@ -5,7 +5,7 @@ Emulates some basic features seen in R. Expands on the base math library for Lua
 
 | Function | Description | Input(s) : Type |
 | -------- | ----------- | ----------- |
-| math.forall | Applys tuple of numbers and tables as inputs for func. E.g. forall(math.noise, array1, 4, array2) | func : function, ... : <tuple: number, array> |
+| math.forall | Applys tuple of numbers and arrays as inputs for func. E.g. forall(math.noise, array1, 4, array2) | func : function, ... : <tuple: number, array> |
 | math.vec | Constructs a new ordinal array of given numbers with Vector metatable | ... : <tuple: number> |
 | math.vectorfy | Supplies an array of numbers with Vector metatable | array : array |
 | math.range | Creates a new array [with Vector metatable] with values ranging from start to stop | start : number, stop : number, step : number |
