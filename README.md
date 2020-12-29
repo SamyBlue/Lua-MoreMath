@@ -22,4 +22,4 @@ Emulates some basic features seen in R. Expands on the base math library for Lua
 | math.boolvec | Constructs a new ordinal array of given booleans with BoolVector metatable | ... : <tuple: boolean> |
 | math.boolvectorfy | Supplies an array of booleans with BoolVector metatable | array : array |
 
-Additionally, see MoreMath.lua for comments on what each metamethod does for Vector (and BoolVector) classes [below VECTOR METAMETHODS section]
+Additionally, see MoreMath.lua for comments on what each metamethod does for Vector (and BoolVector) classes [below the VECTOR METAMETHODS section].
