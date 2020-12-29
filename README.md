@@ -1,5 +1,5 @@
 # Lua-MoreMath
-Emulates some basic features seen in R. Expands on the base math library for Lua and creates a new class called Vector (and BoolVector which inherits from Vector) with operator overloading features.
+Emulates some basic features seen in R (programming language). Expands on the base math library for Lua and creates a new class called Vector (and BoolVector which inherits from Vector) with operator overloading features.
 
 # API
 
