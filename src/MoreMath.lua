@@ -1,5 +1,5 @@
 --[[
-						Expanded Math Library, https://github.com/SamyBlue/Lua-MoreMath
+			Expanded Math Library, https://github.com/SamyBlue/Lua-MoreMath
 									
 + Equips ordinal arrays with metatables to allow for more flexible use in equations and Vector-like behavior
 + Ensure only ordinal arrays are used and that they are all of the same datatype
@@ -10,8 +10,6 @@
 e.g. can do stuff like math.sin(2*array)^3.7  -  4*array2  +  array3  +  math.noise(array1, array2, 7.4)  +  1
 or array[array(">", 0):And(array("<", 5.6))] = 10    ->    sets all values between 0 and 5.6 in array to 10
 --]]
-
-local GraphModule = require(script.GraphModule)
 
 local function assertwarn(requirement: boolean, messageIfNotMet: string)
 	if requirement == false then
@@ -229,47 +227,6 @@ math.sample = function (array, size, replace: boolean, probabilityTable) --Obtai
 		
 	end
 	return math.vectorfy(newArr)
-end
-
-local currFrame, currGraph, currCurve = nil, nil, 0
-
-math.newGraph = function () --Creates new graph
-	local player = game.Players.LocalPlayer
-	local pgui = player and player.PlayerGui or game.CoreGui
-	local sgui = pgui:FindFirstChild("MathGraphs")
-
-	if not sgui then
-		sgui = Instance.new("ScreenGui", pgui)
-		sgui.Name = "MathGraphs"
-		sgui.ResetOnSpawn = false
-	end
-
-	local sframe = Instance.new("Frame", sgui)
-	sframe.Draggable = true
-	sframe.Size = UDim2.fromScale(0.5, 0.5)
-	sframe.Position = UDim2.fromScale(0.25, 0.25)
-	sframe.Color = Color3.new(0.301961, 0.301961, 0.301961)
-	currFrame, currGraph, currCurve = sframe, GraphModule.new(sframe), 0
-end
-
-math.graphLines = function (array, graphName) --Graph
-	if not currFrame then
-		math.newGraph()
-	end
-	
-	currCurve += 1
-	graphName = graphName or currCurve
-	local data = currGraph.Data
-	data[graphName] = array
-	currGraph.Data = data
-end
-
-math.graphPoints = function (array) --Graph
-	if not currFrame then
-		math.newGraph()
-	end
-	
-	
 end
 
 math.which = function (boolVec) --Gets the indexes of all true values
